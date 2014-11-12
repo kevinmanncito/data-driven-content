@@ -10,10 +10,12 @@
   <div class="container">
     <h1>Hi, enter your name and watch your custom animation.</h1>
     <input type="text" placeholder="Name" id="name">
-    <button id="startButton">Start Animation</button>
   </div>
   <div class="container">
-    <canvas id="canvas" width="400" height="300"></canvas>
+    <div id="animation-wrapper">
+      <canvas id="canvas" width="568" height="320"></canvas>
+      <video src="video.MOV" id="video"></video>
+    </div>
   </div>
   <script src="main.js"></script>
 </body>

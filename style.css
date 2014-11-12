@@ -4,5 +4,16 @@
 }
 
 #canvas {
-  background-color: whitesmoke;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: url('play.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#animation-wrapper {
+  position: relative;
+  width: 568px;
+  height: 320px;
 }

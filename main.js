@@ -29,6 +29,7 @@ window.onload = function() {
     clear: function() {
       animation.context.clearRect(0, 0, animation.canvas.width, animation.canvas.height);
       animation.xPos = 25;
+      animation.canvas.style.backgroundImage = "none";
     },
 
     loop: function(time) {
@@ -62,14 +63,22 @@ window.onload = function() {
 
   };
 
-  var startButton = document.getElementById('startButton');
-  startButton.addEventListener("click", function() {
+  var animationWrapper = document.getElementById('animation-wrapper');
+  animationWrapper.addEventListener("click", function() {
     var letters = document.getElementById('name').value;
     for (var i = 0; i < letters.length; i++) {
       animation.letters.push(letters[i]);
     }
     animation.clear();
     animation.initialize();
+    document.getElementById("video").play();
+  });
+
+  var video = document.getElementById('video');
+  video.addEventListener("ended", function() {
+    console.log('ended');
+    var canvas = document.getElementById('canvas');
+    canvas.style.backgroundImage = "url('play.png')";
   });
 
 }
