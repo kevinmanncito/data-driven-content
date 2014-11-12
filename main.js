@@ -22,7 +22,8 @@ window.onload = function() {
 
     initialize: function() {
       animation.drawingStatus = true;
-      animation.prevTime = performance.now();
+      // animation.prevTime = performance.now();
+      animation.prevTime = Date.now();
       requestAnimationFrame(animation.loop);
     },
 
@@ -34,7 +35,8 @@ window.onload = function() {
 
     loop: function(time) {
       if (animation.drawingStatus) {
-        var now = performance.now();
+        // var now = performance.now();
+        var now = Date.now();
         var timeElapsed = now - animation.prevTime;
         animation.prevTime = now;
         animation.update(timeElapsed);
